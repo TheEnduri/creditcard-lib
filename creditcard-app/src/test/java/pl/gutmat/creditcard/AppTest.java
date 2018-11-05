@@ -1,4 +1,4 @@
-package pl.jkan.creditcard;
+package pl.gutmat.creditcard;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
