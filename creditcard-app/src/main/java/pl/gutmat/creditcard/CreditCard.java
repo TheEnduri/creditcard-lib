@@ -28,5 +28,7 @@ class CreditCard{
     public boolean blockCreditCard(){
         return this.isBlocked = true;
     }
+    public void repayDebt(){
 
+    }
 }
