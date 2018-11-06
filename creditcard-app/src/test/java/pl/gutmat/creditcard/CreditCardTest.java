@@ -48,4 +48,24 @@ public class CreditCardTest {
         //assert
         Assert.assertFalse(card.isBlocked);
     }
+        @Test
+    public void withdrawMoneyWhenCardBlocked(){
+        //arrange
+        CreditCard card = new CreditCard();
+        //act
+        card.assignLimit(200);
+        card.withdraw(300);
+        //assert
+        Assert.assertTrue(card.getIsBlocked());
+    }
+    @Test
+    public void withdrawMoneyWhenCardNotBlocked(){
+        //arrange
+        CreditCard card = new CreditCard();
+        //act
+        card.assignLimit(200);
+        card.withdraw(100);
+        //assert
+        Assert.assertFalse(card.getIsBlocked());
+    }
 }
