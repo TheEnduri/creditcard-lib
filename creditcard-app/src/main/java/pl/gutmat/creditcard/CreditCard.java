@@ -1,23 +1,32 @@
 package pl.gutmat.creditcard;
 
-class CreditCard {
-    
-    private boolean blockade = false;
-    
-    public void assignLimit(double money) {
-        
+class CreditCard{
+    private int limit;
+    private boolean isBlocked = false;
+
+    public boolean getIsBlocked(){
+        return isBlocked;
     }
-    
-    public double getLimit() {
-        return 2000;
+
+    public void setLimit(int limit){
+        this.limit = limit;
     }
-    
-    public void block() {
-        this.blockade = true;
+
+    public int getLimit(){
+        return this.limit;
     }
-    
-    public boolean isBlocked() {
-        
-        return this.blockade;
+
+    public void withdraw(int amount){
+
+        int saldo = limit - amount;
+
+        if(amount > limit){
+            blockCreditCard();
+        }
     }
+
+    public boolean blockCreditCard(){
+        return this.isBlocked = true;
+    }
+
 }
