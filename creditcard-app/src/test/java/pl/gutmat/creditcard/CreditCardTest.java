@@ -37,6 +37,7 @@ public class CreditCardTest {
         card.assignLimit(200);
         card.withdraw(300);
     }
+    
     @Test
     public void canRepayDebt(){
         //arrange
