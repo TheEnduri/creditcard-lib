@@ -56,6 +56,13 @@ class CreditCard {
 		return this.blocked;
 	}
 	
+	public void repay(BigDecimal money) {
+        if (money.compareTo(BigDecimal.ZERO) < 0) {
+            throw new CantRepayNegativeAmountException();
+        }
+        balance = balance.add(money);
+    }
+	
 	public BigDecimal getBalance() {
 		return balance;
 	}
