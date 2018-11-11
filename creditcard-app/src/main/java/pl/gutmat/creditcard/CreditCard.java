@@ -32,9 +32,5 @@ class CreditCard {
         this.blockade = true;
     }
 
-    public boolean isBlocked() {
-        return this.blockade;
-    }
-
         
 }
