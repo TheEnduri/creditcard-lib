@@ -1,4 +1,4 @@
-package pl.jkan.creditcard;
+package pl.gutmat.creditcard;
 
 public class LimitAlreadyAssignedException extends IllegalStateException {
 }

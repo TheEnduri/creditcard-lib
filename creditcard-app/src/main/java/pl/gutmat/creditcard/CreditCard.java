@@ -1,11 +1,13 @@
 package pl.gutmat.creditcard;
 
+import java.math.BigDecimal
+
 class CreditCard {
 
-    private boolean blocked = false;
-    private BigDecimal limit;
-    private BigDecimal balance;
-    private String cardNumber;
+	private boolean blockade = false;
+	private BigDecimal limit;
+	private BigDecimal balance = BigDecimal.ZERO;
+	private String cardNumber;
 
     public CreditCard(){
         this.cardNumber = "random_number";
@@ -15,9 +17,11 @@ class CreditCard {
         this.cardNumber = cardNumber;
     }
 
-    public String getNumber(){
-        return cardNumber;
     }
+
+	public String getNumber() {
+		return cardNumber;
+	}
 
     public void withdraw(BigDecimal money) {
         if (isWithdrawOverTheLimit(money))
@@ -48,14 +52,25 @@ class CreditCard {
     public void assignLimit(double money) {
         this.limit = money;
     }
+	}
+
+	private boolean isLimitBelowOrEquals0(BigDecimal money) {
+		return money.compareTo(BigDecimal.ZERO) <= 0;
+	}
 
     public double getLimit() {
         return limit;
     }
 
-    public void block() {
-        this.blockade = true;
+	public void repay(BigDecimal money) {
+        if (money.compareTo(BigDecimal.ZERO) < 0) {
+            throw new CantRepayNegativeAmountException();
+        }
+        balance = balance.add(money);
     }
 
+	public BigDecimal getBalance() {
+		return balance;
+	}
 
 }
