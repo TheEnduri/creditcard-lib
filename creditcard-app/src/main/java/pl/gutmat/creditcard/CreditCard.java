@@ -35,27 +35,6 @@ class CreditCard {
     public boolean isBlocked() {
         return this.blockade;
     }
-    
-    public void withdraw(double amount){
-        balance = limit - amount;
-        
-        if(amount > limit){
-            block();
-        }
-        
-    }
-    
-    public void repayDebt(double amount){
-        balance = balance + amount;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
         
 }
