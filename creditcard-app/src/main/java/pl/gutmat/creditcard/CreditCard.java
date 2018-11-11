@@ -2,7 +2,7 @@ package pl.gutmat.creditcard;
 
 class CreditCard {
 
-    private boolean blockade = false;
+    private boolean blocked = false;
     private BigDecimal limit;
     private BigDecimal balance;
     private String cardNumber;
