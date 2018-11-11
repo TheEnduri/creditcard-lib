@@ -1,6 +1,6 @@
 package pl.gutmat.creditcard;
 
-import java.math.BigDecimal
+import java.math.BigDecimal;
 
 class CreditCard {
 
@@ -53,7 +53,7 @@ class CreditCard {
 	}
 
 	public boolean isBlocked() {
-		return this.blocked;
+		return this.blockade;
 	}
 
 	public void withdraw(BigDecimal money) {
@@ -77,12 +77,6 @@ class CreditCard {
 		return money.compareTo(limit) > 0;
 	}
 
-	public void assignLimit(double money) {
-		this.limit = money;
-	}
-
-	}
-
 	public void repay(BigDecimal money) {
 		if (money.compareTo(BigDecimal.ZERO) < 0) {
 			throw new CantRepayNegativeAmountException();
@@ -93,12 +87,4 @@ class CreditCard {
 	public BigDecimal getBalance() {
 		return balance;
 	}
-
-	<<<<<<<feature_withdraw
-
-	public BigDecimal getBalance() {
-		return balance;
-	}
-
-	=======>>>>>>>master
 }

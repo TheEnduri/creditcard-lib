@@ -5,13 +5,14 @@ import java.util.HashMap;
 
 
 class CreditCardPool {
+    
     private Map<String, CreditCard> cards = new HashMap<String, CreditCard>();
     
     public void add(CreditCard card {
-        cards.put(card.getId(), card);
+        cards.put(card.getNumber(), card);
         )
         
-        public CreditCard find(String id) {
-            return cards.get(id);
+        public CreditCard find(String cardNuumber) {
+            return cards.get(cardNumber);
         }
 }

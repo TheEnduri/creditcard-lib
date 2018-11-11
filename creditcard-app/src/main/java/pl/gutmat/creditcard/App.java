@@ -1,9 +1,5 @@
 package pl.gutmat.creditcard;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
