@@ -5,6 +5,20 @@ class CreditCard {
     private boolean blockade = false;
     private double limit;
     private double balance;
+    private String cardNumber;
+    
+    public CreditCard(){
+        this.cardNumber = "random_number";
+    }
+    
+    public CreditCard(String cardNumber){
+        this.cardNumber = cardNumber;
+    }
+    
+    public String getNumber(){
+        return cardNumber;
+    }
+    
     
     public void assignLimit(double money) {
         this.limit = money;
@@ -30,5 +44,18 @@ class CreditCard {
         }
         
     }
+    
+    public void repayDebt(double amount){
+        balance = balance + amount;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
 }
