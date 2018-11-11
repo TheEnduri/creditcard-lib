@@ -56,12 +56,12 @@ public class CreditCardTest {
 		Assert.assertTrue(card.isBlocked());
 	}
 
-	@Test(expected = WithdrawWhenOverTheLimit.class)
+	@Test(expected = NotEnoughMoneyException.class)
 	public void cantWithdrawWhenWhenOverTheLimit() throws Exception {
 
 		CreditCard card = new CreditCard();
-		card.assignLimit(200);
-		card.withdraw(300);
+		card.assignLimit(money(200));
+		card.withdraw(money(300));
 	}
 
 	@Test(expected = LimitAlreadyAssignedException.class)
@@ -97,15 +97,4 @@ public class CreditCardTest {
 		Assert.assertTrue(money(700).equals(card.getBalance()));
 	}
 
-	@Test
-	public void canRepayDebt() {
-		// arrange
-		CreditCard card = new CreditCard();
-		// act
-		card.assignLimit(money(200));
-		card.withdraw(money(300));
-		card.repay(money(200));
-		// assert
-		Assert.assertFalse(card.isBlocked);
-	}
 }

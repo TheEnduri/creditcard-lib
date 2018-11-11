@@ -38,13 +38,13 @@ public class CreditCardApiTest {
 	}
 
 	private void thereIsCreditCardPool() {
-		this.creditcardPool = new CreditCardPool();
+		this.pool = new CreditCardPool();
 	}
 
 	private void saldoOfCreditCardWithIdEquals(String cardNumber, double expectedBalance) {
 		CreditCard card = pool.find(cardNumber);
 
-		Assert.assertTrue(card.getBalance() == expectedBalance);
+		Assert.assertEquals(BigDecimal.valueOf(expectedBalance), card.getBalance());
 	}
 
 }

@@ -3,7 +3,7 @@ package pl.gutmat.creditcard;
 import org.junit.Test;
 import org.junit.Assert;
 
-public class CreditCardPooltest {
+public class CreditCardPoolTest {
 
 	private static final String number = "1234";
 
