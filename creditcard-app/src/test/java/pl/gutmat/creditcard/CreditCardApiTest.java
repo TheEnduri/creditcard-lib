@@ -33,7 +33,7 @@ public class CreditCardApiTest {
 	}
 
 	private void thereIsCreditCardApi() {
-		this.api = new CreditCardApi();
+		this.api = new CreditCardApi(this.pool);
 
 	}
 
